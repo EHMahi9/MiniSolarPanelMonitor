@@ -1,16 +1,14 @@
 public class SolarPanel implements EnergyProducer {
     private String panelId;
-    private double capacity; // max power in watts
+    private double capacity;
     private double sunlightHours;
     private double actualOutput;
 
-    // Constructor
     public SolarPanel(String panelId, double capacity) {
         this.panelId = panelId;
         this.capacity = capacity;
     }
 
-    // Setters
     public void setSunlightHours(double sunlightHours) {
         if (sunlightHours < 0) {
             throw new IllegalArgumentException("Sunlight hours cannot be negative!");
@@ -25,7 +23,6 @@ public class SolarPanel implements EnergyProducer {
         this.actualOutput = actualOutput;
     }
 
-    // Getters
     public String getPanelId() {
         return panelId;
     }
