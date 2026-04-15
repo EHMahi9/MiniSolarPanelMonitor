@@ -7,11 +7,16 @@ public class myPanel extends SolarPanel {
 
     @Override
     public double calculateEfficiency() {
-        double efficiency = super.calculateEfficiency();
+        double efficiency = super.calculateEfficiency() + 5.0;
+
         if (efficiency == 0) {
             return 0;
         }
 
-        return efficiency + 5.0;
+        if (efficiency > 100.0) {
+            return 100.0;
+        }
+
+        return efficiency;
     }
 }

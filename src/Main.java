@@ -45,7 +45,18 @@ public class Main {
 
                         double cap = readDouble(sc, "Enter Capacity (W): ");
 
-                        SolarPanel panel = new SolarPanel(id, cap);
+                        System.out.println("Select Panel Type:");
+                        System.out.println("1. Standard Solar Panel");
+                        System.out.println("2. Upgraded Panel (+5% Efficiency)");
+                        int panelType = readInt(sc, "Choose: ");
+
+                        SolarPanel panel;
+                        if (panelType == 2) {
+                            panel = new myPanel(id, cap);
+                        } else {
+                            panel = new SolarPanel(id, cap);
+                        }
+
                         system.addPanel(panel);
 
                         System.out.println("Panel added successfully!");
