@@ -5,6 +5,9 @@ public class SolarPanel implements EnergyProducer {
     private double actualOutput;
 
     public SolarPanel(String panelId, double capacity) {
+        if (capacity < 0) {
+            throw new IllegalArgumentException("Capacity cannot be negative!");
+        }
         this.panelId = panelId;
         this.capacity = capacity;
     }
